@@ -1,5 +1,4 @@
 import java.io.File;
-import java.util.Arrays;
 
 public class Main {
     int num = 0;
@@ -11,10 +10,11 @@ public class Main {
         File basedirPath = new File("C:/Users/user/Desktop/basedir");
         Main main = new Main();
         main.findDeep(basedirPath);
-        System.out.println(main.maxDeepFile.getName());
+        System.out.println(main.maxDeepFile.getName()); //name of the deepest file
+        //System.out.println(main.maxDeepNum); //number of parents of the deepest file
+        //System.out.println(main.numberOfFiles); //number of files in folder
     }
     public void findDeep(File file) {
-
         for (File fl : file.listFiles()) {
             if (!fl.isDirectory()) {
                 //System.out.println(fl.getName() + " not a directory");
@@ -43,6 +43,5 @@ public class Main {
             }
             numberOfFiles++;
         }
-        //System.out.println(numberOfFiles);
     }
 }
